@@ -1,0 +1,31 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Animal :</h2>
+    </div>
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Animal</label>
+            <input type="text" [(ngModel)]="newAnimaux.idAnimal" name="idAnimal" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Animal</label>
+            <input type="text" [(ngModel)]="newAnimaux.nomAnimal" name="nomAnimal" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Espece</label>
+            <input type="text" [(ngModel)]="newAnimaux.espece" name="espece" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date création</label>
+            <input type="date" [(ngModel)]="newAnimaux.dateNaissance" name="dateCreation" class="form-control">
+        </div>
+        <div class="mt-2">
+            <button type="submit" (click)="addAnimaux()" class="btn btn-success">Ajouter</button>
+        <div>
+           &nbsp; <h3 style="font-family: Century Gothic, sans-serif; font-size: 18px;">{{ messag }}</h3>
+        </div>
+        
+        </div>
+    </form>
+</div>
+
