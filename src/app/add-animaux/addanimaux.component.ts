@@ -15,7 +15,7 @@ constructor(private animauxservice : AnimauxService){
 }
 addAnimaux(){
   this.animauxservice.addAnimaux(this.newAnimaux);
- console.log(this.newAnimaux)
+ console.log("from add.ts"+this.newAnimaux)
   this.messag="animeaux " + this.newAnimaux.nomAnimal + " ajouté avec succées" ;
 }
   

@@ -24,7 +24,6 @@ anim!: Animaux;
   addAnimaux(animaux: Animaux)
   {
     this.animaux.push(animaux);
-    console.log(animaux)
   }
 
   supprimerAnnimaux( anim : Animaux){
