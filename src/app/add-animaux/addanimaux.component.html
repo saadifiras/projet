@@ -17,7 +17,17 @@
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <label>Date création</label>
-            <input type="date" [(ngModel)]="newAnimaux.dateNaissance" name="dateCreation" class="form-control">
+            <input type="date" [(ngModel)]="newAnimaux.dateNaissance" name="dateNaissance" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Categorie</label>
+            <select class="form-control form-control-lg" id="idCat" name="idCat"
+            [(ngModel)]="groupeanim">
+             <option *ngFor="let cat of groupeanim" [value]="cat.idanim" >
+             {{cat.nomanim}}
+            </option>
+        </select>
         </div>
         <div class="mt-2">
             <button type="submit" (click)="addAnimaux()" class="btn btn-success">Ajouter</button>

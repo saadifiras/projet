@@ -25,7 +25,7 @@ ngOnInit()
 }
 
 updateanimaux()
-{ this.animauxtService.updateanimaux(this.currentanimaux);
+{ this.animauxtService.updateAnimaux(this.currentanimaux);
   this.router.navigate(['animaux']);
   }
   
