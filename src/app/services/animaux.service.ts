@@ -43,7 +43,7 @@ consulterAnnimaux(id: number):Animaux{
 
   updateanimaux(a :Animaux)
   {
-  // console.log(p);
+  
   this.supprimerAnnimaux(a);
   this.addAnimaux(a);
   }
