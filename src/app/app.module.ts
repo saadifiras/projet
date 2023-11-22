@@ -6,12 +6,14 @@ import { AnimauxComponent } from './animaux/animaux.component';
 import { AddanimauxComponent } from './add-animaux/addanimaux.component';
 import { FormsModule } from '@angular/forms';
 import { UpdtaeAnimauxComponent } from './updtae-animaux/updtae-animaux.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
     AnimauxComponent,
     AddanimauxComponent,
-    UpdtaeAnimauxComponent
+    UpdtaeAnimauxComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
