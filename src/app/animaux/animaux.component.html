@@ -9,8 +9,8 @@
     <td>{{animaux.nomAnimal}}</td>
     <td>{{animaux.espece}}</td>
     <td>{{animaux.dateNaissance | date:'dd/MM/yyyy'}}</td>
-    <td><a class="btn btn-danger" (click)="supprimerAnnimaux(animaux)">Supprimer</a></td>
-    <td><a class="btn btn-success" [routerLink]="['/updateanimaux',animaux.idAnimal]">Modifier</a></td>
+    <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimerAnnimaux(animaux)">Supprimer</a></td>
+    <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateanimaux',animaux.idAnimal]">Modifier</a></td>
     </tr>
     </tbody>
     </table>

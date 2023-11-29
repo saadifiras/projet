@@ -1,6 +1,8 @@
+import { AnimauxService } from './../services/animaux.service';
 import { Component, OnInit } from '@angular/core';
 import { Animaux } from '../model/animaux.model';
-import { AnimauxService } from '../services/animaux.service';
+import { AuthService } from '../services/auth.service';
+
 
 @Component({
   selector: 'app-animaux',
@@ -9,8 +11,10 @@ import { AnimauxService } from '../services/animaux.service';
 })
 export class AnimauxComponent implements OnInit{
 animaux : Animaux[];
-private animauxservice =new AnimauxService();
-constructor(){ 
+
+constructor(private animauxservice : AnimauxService,
+  public authService: AuthService)  { 
+
     this.animaux=[];
 
     }

@@ -1,5 +1,6 @@
+import { Animaux } from './../model/animaux.model';
 import { Injectable } from '@angular/core';
-import { Animaux } from '../model/animaux.model';
+
 import { groupeanim } from '../model/groupeanim.model';
 
 @Injectable({
@@ -18,10 +19,9 @@ groupeanim! : groupeanim[];
       {idanim : 2 , nomanim : "rex"}
     ];
     this.animaux = [
-    
       { idAnimal: 1, nomAnimal: "Rex", espece: "Chien", dateNaissance: new Date("01/14/2011"),groupeanim : {idanim : 1 , nomanim : "mamiphere"}  },
       { idAnimal: 2, nomAnimal: "Whiskers", espece: "Chat", dateNaissance: new Date("12/17/2010"),groupeanim : {idanim : 2 , nomanim : "mamiphere"} },
-      { idAnimal: 3, nomAnimal: "Simba", espece: "Lion", dateNaissance: new Date("02/20/2020"),groupeanim: {idanim : 3 , nomanim : "mamiphere"} }
+      { idAnimal: 3, nomAnimal: "Simba", espece: "Lion", dateNaissance: new Date("02/20/2020"),groupeanim: {idanim : 3 , nomanim : "mamiphere"}}
   
      ];
   }
@@ -65,8 +65,13 @@ consulterAnnimaux(id: number):Animaux{
       return this.groupeanim.find(cat => cat.idanim == id)!;
       }
 
+      rechercheParType( id:number): Animaux[]{
+        const toto = this.animaux.filter((animaux) => animaux.groupeanim.idanim == id);
+        return toto;
+      }
+     }
 
     
   
   
-}
+

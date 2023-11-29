@@ -7,13 +7,17 @@ import { AddanimauxComponent } from './add-animaux/addanimaux.component';
 import { FormsModule } from '@angular/forms';
 import { UpdtaeAnimauxComponent } from './updtae-animaux/updtae-animaux.component';
 import { LoginComponent } from './login/login.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { RechercheParAnimauxComponent } from './recherche-par-animaux/recherche-par-animaux.component';
 @NgModule({
   declarations: [
     AppComponent,
     AnimauxComponent,
     AddanimauxComponent,
     UpdtaeAnimauxComponent,
-    LoginComponent
+    LoginComponent,
+    ForbiddenComponent,
+    RechercheParAnimauxComponent
   ],
   imports: [
     BrowserModule,
