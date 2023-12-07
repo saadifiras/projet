@@ -1,3 +1,4 @@
+import { Groupeanim } from './../model/groupeanim.model';
 import { Component } from '@angular/core';
 import { AnimauxService } from '../services/animaux.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,23 +12,29 @@ import { Animaux } from '../model/animaux.model';
 export class UpdtaeAnimauxComponent {
 
 currentanimaux = new Animaux();
+grp! : Groupeanim[];
+updatedGrpId!: number;
 constructor(private activatedRoute: ActivatedRoute,
   private router : Router,
-  private animauxtService:AnimauxService){
+  private animauxService:AnimauxService){
 
 }
-ngOnInit()
-{
- 
-  console.log(this.activatedRoute.snapshot.params['id']);
-  this.currentanimaux=this.animauxtService.consulterAnnimaux(this.activatedRoute.snapshot.params['id']);
-  console.log(this.currentanimaux);
-}
+ngOnInit(): void {
+  this.animauxService.listegroup().
+  subscribe(grp => {this.grp = grp;
+  console.log(grp);
+  });
+  this.animauxService.consulterAnimaux(this.activatedRoute.snapshot.params['id']).
+  subscribe( prod =>{ this.currentanimaux = prod;
+  this.updatedGrpId =this.currentanimaux.groupe.idGrp;
+  } ) ;
+  }
 
 updateanimaux()
-{ this.animauxtService.updateAnimaux(this.currentanimaux);
-  this.router.navigate(['animaux']);
-  }
-  
-
+{ this.currentanimaux.groupe = this.grp.
+  find(grp => grp.idGrp == this.updatedGrpId)!;
+ this.animauxService.updateAnimaux(this.currentanimaux).subscribe(anim => {
+ this.router.navigate(['animaux']); }
+ );
+}
 }

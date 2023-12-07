@@ -5,11 +5,11 @@
     <form>
         <div class="col-sm-2 col-md-2 col-lg-2">
             <label>ID Animal</label>
-            <input type="text" [(ngModel)]="newAnimaux.idAnimal" name="idAnimal" class="form-control">
+            <input type="text" [(ngModel)]="newAnimaux.idAnim" name="idAnimal" class="form-control">
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <label>Nom Animal</label>
-            <input type="text" [(ngModel)]="newAnimaux.nomAnimal" name="nomAnimal" class="form-control">
+            <input type="text" [(ngModel)]="newAnimaux.nomAnim" name="nomAnimal" class="form-control">
         </div>
         <div class="col-sm-2 col-md-2 col-lg-2">
             <label>Espece</label>
@@ -22,12 +22,11 @@
 
         <div class="col-sm-4 col-md-4 col-lg-4">
             <label>Categorie</label>
-            <select class="form-control form-control-lg" id="idCat" name="idCat"
-            [(ngModel)]="groupeanim">
-             <option *ngFor="let cat of groupeanim" [value]="cat.idanim" >
-             {{cat.nomanim}}
-            </option>
-        </select>
+            <select class="form-control form-control-lg" id="idGrp" name="idGrp" [(ngModel)]="newIdGrp">
+                <option *ngFor="let grp of groupeanim" [value]="grp.idGrp">
+                    {{grp.nomGroupe}}
+                </option>
+            </select>
         </div>
         <div class="mt-2">
             <button type="submit" (click)="addAnimaux()" class="btn btn-success">Ajouter</button>

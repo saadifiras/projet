@@ -19,10 +19,12 @@
 Animaux
 </a>
 <div class="dropdown-menu">
-<a *ngIf="authService.isAdmin()" class="dropdown-item"class="dropdown-item" routerLink="addanimaux">Ajouter</a>
+<a *ngIf="authService.isAdmin()" class="dropdown-item"class="dropdown-item" routerLink="add-animaux">Ajouter</a>
 <a class="dropdown-item" href="#">Lister</a>
 <a class="dropdown-item" routerLink="/rechercheParAnimaux" >Recherche Par
-    Catégorie</a>
+   Type </a>
+    <a class="dropdown-item" routerLink="/rechercheParNom" >Recherche Par Nom</a>
+
 </div>
 </li>
 </ul>

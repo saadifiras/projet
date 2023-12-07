@@ -1,10 +1,10 @@
-import { groupeanim } from "./groupeanim.model";
+import { Groupeanim } from "./groupeanim.model";
 
 export class Animaux {
-    idAnimal?: number;
-    nomAnimal? : string;
+    idAnim!: number;
+    nomAnim? : string;
     espece? : string;
     dateNaissance? : Date ;
-    groupeanim! :groupeanim;
+    groupe! :Groupeanim;
     }
     

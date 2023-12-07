@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,9 @@ import { UpdtaeAnimauxComponent } from './updtae-animaux/updtae-animaux.componen
 import { LoginComponent } from './login/login.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { RechercheParAnimauxComponent } from './recherche-par-animaux/recherche-par-animaux.component';
+import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom.component';
+import { SearchFilterPipe } from './search-filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +21,16 @@ import { RechercheParAnimauxComponent } from './recherche-par-animaux/recherche-
     UpdtaeAnimauxComponent,
     LoginComponent,
     ForbiddenComponent,
-    RechercheParAnimauxComponent
+    RechercheParAnimauxComponent,
+    RechercheParNomComponent,
+    SearchFilterPipe,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule ,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

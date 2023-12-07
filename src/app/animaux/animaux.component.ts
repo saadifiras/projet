@@ -10,25 +10,47 @@ import { AuthService } from '../services/auth.service';
   
 })
 export class AnimauxComponent implements OnInit{
+[x: string]: any;
 animaux : Animaux[];
 
-constructor(private animauxservice : AnimauxService,
+constructor(private animauxService : AnimauxService,
   public authService: AuthService)  { 
 
     this.animaux=[];
 
     }
     
-    supprimerAnnimaux(anim : Animaux)
+   /* supprimerAnnimaux(anim : Animaux)
 {
   let conf = confirm("Etes-vous sûr ?");
    if (conf)
-  this.animauxservice.supprimerAnnimaux(anim);
-  }
+  this.animauxservice.supprimerAnimaux(anim);
+  }*/
+
+  
     
   ngOnInit(): void {
-    this.animaux=this.animauxservice.listeAnimaux();
+    this.chargerAnimaux();
+    }
+
+  chargerAnimaux()
+  {
+    this.animauxService.listeAnimaux().subscribe(anims => {
+      console.log(anims);
+      this.animaux = anims;
+      });
   }
+  supprimerAnimaux(a: Animaux)
+{
+let conf = confirm("Etes-vous sûr ?");
+if (conf)
+this.animauxService.supprimerAnimaux(a.idAnim).subscribe(() => {
+console.log("animal supprimé");
+this.chargerAnimaux();
+});
+}
+
+
 }
 
 

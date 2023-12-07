@@ -2,15 +2,16 @@
     <div class="card shadow mb-4">
     <div class="card-body">
     <table class="table table-striped">
-    <tr> <th>Id</th><th>Nom</th> <th>espece</th> <th>Date de naissance</th> </tr>
-    <tbody *ngFor="let animaux of animaux">
+    <tr> <th>Id</th><th>Nom</th> <th>espece</th> <th>Date de naissance</th> <th>groupe</th> </tr>
+    <tbody *ngFor="let anim of animaux">
     <tr >
-    <td>{{animaux.idAnimal}}</td>
-    <td>{{animaux.nomAnimal}}</td>
-    <td>{{animaux.espece}}</td>
-    <td>{{animaux.dateNaissance | date:'dd/MM/yyyy'}}</td>
-    <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimerAnnimaux(animaux)">Supprimer</a></td>
-    <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateanimaux',animaux.idAnimal]">Modifier</a></td>
+    <td>{{anim.idAnim}}</td>
+    <td>{{anim.nomAnim}}</td>
+    <td>{{anim.espece}}</td>
+    <td>{{anim.dateNaissance | date:'dd/MM/yyyy'}}</td>
+    <td>{{anim.groupe.nomGroupe}}</td>
+    <td><a *ngIf="authService.isAdmin()" class="btn btn-danger" (click)="supprimerAnimaux(anim)">Supprimer</a></td>
+    <td><a *ngIf="authService.isAdmin()" class="btn btn-success" [routerLink]="['/updateanimaux',anim.idAnim]">Modifier</a></td>
     </tr>
     </tbody>
     </table>

@@ -1,7 +1,7 @@
 import { AnimauxService } from './../services/animaux.service';
 import { Component,OnInit } from '@angular/core';
 import { Animaux } from '../model/animaux.model';
-import { groupeanim } from '../model/groupeanim.model';
+import { Groupeanim } from '../model/groupeanim.model';
 
 @Component({
   selector: 'app-recherche-par-animaux',
@@ -14,7 +14,7 @@ export class RechercheParAnimauxComponent {
   
   Animaux! : Animaux[];
   idAnimal! : number;
-  groupeanimaux!: groupeanim[];
+  groupeanimaux!: Groupeanim[];
 
   constructor(private animauxService : AnimauxService)
   {
@@ -22,15 +22,21 @@ export class RechercheParAnimauxComponent {
   }
 
   ngOnInit(): void {
-    this.groupeanimaux = this.animauxService.listeAnimaux(); 
-    console.log(this.groupeanimaux);
+    this.animauxService.listegroup().subscribe(anims => {this.groupeanimaux=anims;
+      console.log(anims); 
+      });
   }
 
 onChange()
 {
-
-  this.Animaux = this.animauxService.rechercheParType(this.idAnimal);
-
+  if (this.idAnimal!== undefined && !isNaN(this.idAnimal)) {
+    this.animauxService.rechercheParGroupe(this.idAnimal)
+      .subscribe(anims => {
+        this.Animaux = anims;
+      });
+  } else {
+    console.error('idAnimal is not a valid number');
+  }
 }
 
 

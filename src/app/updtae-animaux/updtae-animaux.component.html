@@ -4,13 +4,13 @@
     </div>
     <form >
     <div class="col-sm-2 col-md-2 col-lg-2">
-    <label >ID Produit</label>
-    <input type="text" [(ngModel)]="currentanimaux.idAnimal"
+    <label >ID Animal</label>
+    <input type="text" [(ngModel)]="currentanimaux.idAnim"
     name="idAnimal" class="form-control">
     </div>
     <div class="col-sm-4 col-md-4 col-lg-4" >
     <label >Nom Produit</label>
-    <input type="text"[(ngModel)]= "currentanimaux.nomAnimal"
+    <input type="text"[(ngModel)]= "currentanimaux.nomAnim"
     name="nomAnimal" class="form-control">
     </div>
     <div class="col-sm-2 col-md-2 col-lg-2">
@@ -23,6 +23,14 @@
         <input type="date" [ngModel]="currentanimaux.dateNaissance | date: 'yyyy-MM-dd'"
         (ngModelChange)=" currentanimaux.dateNaissance= $event" name="dateNaissance"
          class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Groupe</label>
+            <select class="form-control form-control-lg" id="idGrp" name="idGrp" [(ngModel)]="updatedGrpId">
+                <option *ngFor="let grp of grp" [value]="grp.idGrp">
+                    {{grp.nomGroupe}}
+                </option>
+            </select>
         </div>
         <div class="mt-2">
         <button type="submit" (click)="updateanimaux()" class="btn btn-success">Modifer</button>

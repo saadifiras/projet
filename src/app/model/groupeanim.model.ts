@@ -1,5 +1,5 @@
-export class groupeanim {
-    idanim! : number; 
-    nomanim! : string;
+export class Groupeanim {
+    idGrp! : number; 
+    nomGroupe! : string;
     }
     
